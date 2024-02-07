@@ -1,0 +1,61 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="side_plate_div">
+    <div class="side_plate card">
+        <ul class="list-group list-group-flush">
+            <label for="title">Popular</label>
+            <label for="title">Recently added</label>
+            <label for="title">categories -</label>
+            <li class="list-group-item" >
+                <a href="/blogs/educational/categories" >Educational</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/buisness/categories">Buisness</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/travel/categories">Travel</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/health/categories">Health</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/science/categories">Science</a>
+            </li>
+            <li class="list-group-item">
+                <a href="/blogs/music/categories">Music</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/entertainment/categories">Entertainment</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/agriculture/categories">Agriculture</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/international/categories">International</a>
+            </li>
+            <li class="list-group-item" >
+                <a href="/blogs/social/categories">Social</a>
+            </li>
+            <li class="list-group-item" ></li>
+        </ul>   
+    </div>
+    <div>
+        <% for(let listing of allListings){ %>
+                <div class="box_art">
+                    <div class="box_img">
+                        <img src="<%= listing.image.url %>" >
+                    </div>
+                    <div class="box_hp">
+                        <div class="box_head">
+                            <h3><%= listing.title %></h3>
+                        </div>
+                        <div class="box_para">
+                            <p><%= listing.para %></p>
+                        </div>
+                        <a href="/blogs/<%= listing._id %>" class="btn btn-link"> read more</a>
+                    </div>
+                </div>
+                
+        <% } %>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="profile_page">
+    <div class="profile_plate">
+        <div class="pro_user_logo"><%= currUser.username.charAt(0).toUpperCase() %></div>
+        <div class="pro_user_detail">
+            <h4><%= currUser.username %></h4>
+            <p><%= currUser.email%></p>
+        </div>
+
+        <div class="pro_user_list">
+            <ul>
+                <li>
+                    <a href="/"><i class="fa-solid fa-house"></i> Home</a>
+                </li>
+                <li>
+                    <a href="/blogs/<%= currUser._id %>/profile"><i class="fa-solid fa-square-poll-vertical"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="/blogs/<%= currUser._id %>/profile/myart"><i class="fa-brands fa-blogger-b"></i> Your Articles</a>
+                </li>
+                <li>
+                    <a href="/blogs/new"><i class="fa-solid fa-pen-nib"></i> Write Article</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-heart"></i> Most liked</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="profile_body">
+        <div>
+            <div class="pro_user_logo"><%= currUser.username.charAt(0).toUpperCase() %></div>
+            <div class="pro_user_detail">
+                <h4><%= currUser.username %></h4>
+                <p><%= currUser.email%></p>
+            </div>
+        </div>
+        <h3>Dashboard</h3>
+    </div>
+</div>

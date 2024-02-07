@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row">
+    <div class="col-8 offset-3 new_form" ><br>
+    <h3>Edit your Article</h3><br>
+    <form method="POST"  action="/blogs/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="col-md-8 mt-2">
+            <label for="title" class="form-lable">Enter title</label>
+            <input type="text" name="listing[title]" value="<%= listing.title %>" placeholder="title" class="form-control" required>
+            <div class="invalid-feedback"> please enter title! </div>
+        </div >
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Enter image</label>
+            <input type="file" name="listing[image]" class="form-control" >
+        </div >
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Enter Article</label>
+            <textarea type="text" name="listing[para]"  placeholder="Article" class="form-control" required><%= listing.para %></textarea >
+            <div class="invalid-feedback"> please enter Article! </div>
+        </div >
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Enter category</label>
+            <input type="text" name="listing[category]" value="<%= listing.category %>" placeholder="category" class="form-control" required>
+            <div class="invalid-feedback"> please enter category! </div>
+        </div >
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Enter tags</label>
+            <input type="text" name="listing[tags]" value="<%= listing.tags %>" placeholder="tags" class="form-control" required>
+            <div class="invalid-feedback"> please enter category! </div>
+        </div >
+        <div class="col-12 mt-4" >
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+    </form>
+    </div>
+</div>

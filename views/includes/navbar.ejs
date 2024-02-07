@@ -1,0 +1,152 @@
+<header class="nav_container">
+  <nav class="container-n">
+    <div class="nav_head_bar" >
+        <button class="nav_toggle button nav_barmain" onclick="showmain()" id="nav_toggle"><i class="fa-solid fa-bars nav_bars" id="nav_bars"></i></button>
+        <a href="" class="nav_heading">Adhiyana</a>
+    </div>
+
+      <div class="nav_menu">
+          <ul class="nav_items">
+              <li class="nav_item">
+                  <a href="/" class="nav_link">Home</a>
+              </li>
+              <li class="nav_item">
+                  <a href="/blogs" class="nav_link">Read Article</a>
+              </li>
+              <li class="nav_item">
+                  <a href="/blogs/new" class="nav_link">Write Article</a>
+              </li>
+              <li class="nav_item" style=" position: relative;">
+                  <!-- <a href="" class="nav_link">category</a> -->
+                  <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle nav_link nav_category" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/blogs/educational/categories">Educational</a></li>
+                      <li><a class="dropdown-item" href="/blogs/buisness/categories">Buisness</a></li>
+                      <li><a class="dropdown-item" href="/blogs/travel/categories">Travel</a></li>
+                      <li><a class="dropdown-item" href="/blogs/health/categories">Health</a></li>
+                      <li><a class="dropdown-item" href="/blogs/science/categories">Science</a></li>
+                      <li><a class="dropdown-item" href="/blogs/music/categories">Music</a></li>
+                      <li><a class="dropdown-item" href="/blogs/entertainment/categories">Entertainment</a></li>
+                      <li><a class="dropdown-item" href="/blogs/agriculture/categories">Agriculture</a></li>
+                      <li><a class="dropdown-item" href="/blogs/international/categories">International</a></li>
+                      <li><a class="dropdown-item" href="/blogs/social/categories">International</a></li>
+                    </ul>
+                  </div>
+              </li>
+              <li class="nav_item">
+                  <a href="/blogs/about" class="nav_link">About us</a>
+              </li>
+          </ul>
+      </div>
+      <div class="searchbar">
+          <form method="POST" action="/blogs/search" class="d-flex nav_search" role="search">
+              <input class="search_inp" type="search" name="key" placeholder="Search" aria-label="Search">
+              <button class=" search_btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+      </div>
+      <div class="search_icon">
+          <button onclick="showsearch()" class="button"><i class="fa-solid fa-magnifying-glass "></i></button>
+      </div>
+
+      <div class="nav_menu">
+          <ul class="nav_items">
+            <% if(!currUser){ %>
+              <li class="nav_item">
+                  <a href="/login" class="nav_link">Login</a>
+              </li>
+              <li class="nav_item">
+                  <a href="/signup" class="nav_link">Signup</a>
+              </li>
+              <% } %>
+              
+            <% if(currUser){ %>
+              <li class="nav_item">
+                <div class="dropdown">
+                    <button class="dropbtn"><%= currUser.username.charAt(0).toUpperCase() %></button>
+                    <div class="dropdown-content">
+                      <a href="/blogs/<%= currUser._id%>/profile"><i class="fa-regular fa-user"></i>My Profile</a>
+                      <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+                    </div>
+                  </div>
+              </li>
+            <% } %>
+          </ul>
+      </div>
+
+      
+      <div class="nav_barmain">
+          <div class="nav_bar">
+              <button onclick="showsearch()" class="button nav_user"><i class="fa-solid fa-magnifying-glass "></i></button>
+              <% if(currUser){ %>
+                    <div class="dropdown">
+                        <button class="dropbtn"><%= currUser.username.charAt(0).toUpperCase() %></button>
+                        <div class="dropdown-content">
+                          <a href="/blogs/<%= currUser._id%>/profile"><i class="fa-regular fa-user"></i>My Profile</a>
+                          <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+                        </div>
+                      </div>
+              <% } %>
+              <!-- <button class="nav_toggle button" onclick="showmain()" class="nav_toggle"><i class="fa-solid fa-bars nav_bars" ></i></button> -->
+          </div>
+      </div>
+
+  </nav>
+</header>
+
+<div class="main_cont" id="main_cont">
+  <div class="search_cont main_cont">
+      <div class="main_search">
+          <form method="POST" action="/blogs/search" class="d-flex nav_search" role="search">
+              <input class="main_inp" name="key" type="search" placeholder="Search" aria-label="Search">
+              <button class=" main_btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+      </div>
+      <a href="" class="mainsearch_x main_x"><i class="fa-solid fa-xmark"></i></a>
+  </div>
+</div>
+
+<main>
+  <div class="main">
+      <div>
+          <div class="main_item">
+              <a href="/" class="nav_link">Home</a>
+          </div>
+          <div class="main_item">
+              <a href="/blogs" class="nav_link">Read Article</a>
+          </div>
+          <div class="main_item">
+              <a href="/blogs/new" class="nav_link">Write Article</a>
+          </div>
+          <div class="main_item">
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle nav_link nav_category" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/blogs/educational/categories">Educational</a></li>
+                  <li><a class="dropdown-item" href="/blogs/buisness/categories">Buisness</a></li>
+                  <li><a class="dropdown-item" href="/blogs/travel/categories">Travel</a></li>
+                  <li><a class="dropdown-item" href="/blogs/health/categories">Health</a></li>
+                  <li><a class="dropdown-item" href="/blogs/science/categories">Science</a></li>
+                  <li><a class="dropdown-item" href="/blogs/music/categories">Music</a></li>
+                  <li><a class="dropdown-item" href="/blogs/entertainment/categories">Entertainment</a></li>
+                  <li><a class="dropdown-item" href="/blogs/agriculture/categories">Agriculture</a></li>
+                  <li><a class="dropdown-item" href="/blogs/international/categories">International</a></li>
+                  <li><a class="dropdown-item" href="/blogs/social/categories">International</a></li>
+                </ul>
+              </div>
+          </div>
+          <div class="main_item">
+              <a href="/blogs/about" class="nav_link">About us</a>
+          </div>
+          <% if(!currUser){ %>
+          <div class="main_item">
+              <a href="/login" class="nav_link">Login</a>
+          </div>
+          <div class="main_item">
+              <a href="/signup" class="nav_link">Signup</a>
+          </div>
+          <% } %>
+      </div>
+  </div>
+</main>
+

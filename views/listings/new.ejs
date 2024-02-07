@@ -1,0 +1,37 @@
+<% layout("/layouts/boilerplate") %>
+
+<div >
+    <div class="col-8 offset-3 new_form" ><br>
+    <h3>Create New Article</h3><br>
+    <form method="POST" class="g-3 needs-validation" action="/blogs" novalidate  enctype="multipart/form-data">
+        <div class="col-md-8 mt-2">
+            <label for="title" class="form-lable">Enter title</label>
+            <input type="text" name="listing[title]" class="form-control new_form-inp" placeholder="title" required>
+            <div class="invalid-feedback"> please enter title! </div>
+        </div >
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Upload image</label>
+            <input type="file" name="listing[image]" class="form-control" required>
+            <div class="invalid-feedback"> please Upload image! </div>
+        </div>
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Enter article </label>
+            <textarea type="text" name="listing[para]" placeholder="para" rows="10" class="form-control" required></textarea>
+            <div class="invalid-feedback"> please enter article! </div> 
+        </div>
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Enter article category</label>
+            <input type="text" name="listing[category]" placeholder="category" class="form-control" required>
+            <div class="invalid-feedback"> please enter category of article! </div>
+        </div>
+        <div class="col-md-8 mt-3">
+            <label for="title" class="form-lable">Enter tags :<span class="text-muted"> please enter "," after every tag and dont insert any space</span></label>
+            <input type="text" name="listing[tags]" placeholder="tags" class="form-control" >
+            <div class="invalid-feedback"> please enter tags for article! </div>
+        </div>
+        <div class="col-12 mt-4" >
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+    </div>
+</div>
